@@ -33,11 +33,11 @@ namespace ChessGameDDD.Domain.Entities
             // not needed yet
         }
 
-        internal IEnumerable<BoardCell> GetPiecesBetweenMoveLocations(Move move)
+        internal IEnumerable<BoardCell> GetBoardCellsBetweenMoveLocations(Move move)
         {
             var fromBoardCell = GetBoardcellByMoveLocation(move.FromLocation);
             var toBoardCell = GetBoardcellByMoveLocation(move.ToLocation);
-
+            // TODO: IMPLEMENT!!!!!!
             return null;
         }
 

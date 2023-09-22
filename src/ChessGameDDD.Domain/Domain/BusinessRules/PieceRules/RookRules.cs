@@ -13,13 +13,5 @@ namespace ChessGameDDD.Domain.BusinessRules.PieceRules
                 throw new BusinessRuleViolationException("Move direction not allowed for rook");
             }
         }
-
-        public static void MoveIsAllowedOnBoard(this Rook piece, Move move, Board board)
-        {
-            // check if move jumps over other piece
-            var piecesBetweenMove = board.GetPiecesBetweenMoveLocations(move);
-
-            //if piecesBetweenMove.Any() && !piece.CanJumpOverPieces
-        }
     }
 }

@@ -20,9 +20,9 @@ namespace ChessGameDDD.ApplicationLayer.CommandHandlers
             var game = Game.Create(oldEvents);
 
             // Map command to move
-            //var move = new Move();
+            // var move = new Move();
 
-            //game.MakeMove(move);
+            // game.MakeMove(move);
 
             // persist events
             // Save to database (Infrastructure layer)

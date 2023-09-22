@@ -21,10 +21,13 @@ namespace ChessGameDDD.Domain.Entities
 
         public void MakeMove(Move move)
         {
+            // CHECK FASE
             var pieceToMove = Board.GetPieceToMove(move.FromLocation);
 
             // Check business rules
             pieceToMove.CanMakeMove(move, Board);
+
+           // EXECTUTION PHASE
 
             // Create event
             var eventResult = move.MapToMoveMade();

@@ -5,6 +5,8 @@ namespace ChessGameDDD.Domain.Entities.Pieces
 {
     public class Rook : Piece
     {
+        internal override bool CanJumpOtherPiece => false;
+
         protected override IEnumerable<object> GetAtomicValues()
         {
             return null;
@@ -14,7 +16,6 @@ namespace ChessGameDDD.Domain.Entities.Pieces
         {
             base.CanMakeMove(move, board);
             this.DirectionIsAllowed(move);
-            this.MoveIsAllowedOnBoard(move, board);
         }
     }
 }
