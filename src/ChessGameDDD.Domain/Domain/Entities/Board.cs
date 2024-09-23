@@ -57,5 +57,17 @@ namespace ChessGameDDD.Domain.Entities
         {
             return rank - 49;
         }
+        
+        public IEnumerable<Piece> GetPiecesBetweenMoveLocations(Move move)
+        {
+            IEnumerable<BoardCell> boardCells = GetBoardCellsBetweenMoveLocations(move);
+            foreach (BoardCell boardCell in boardCells)
+            {
+                if(boardCell.ContainingPiece != null)
+                {
+                    yield return boardCell.ContainingPiece;
+                }
+            }
+        }
     }
 }
