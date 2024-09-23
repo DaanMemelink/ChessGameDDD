@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChessGameDDD.ApplicationLayer.CommandHandlers;
 
 namespace ChessGameDDD.UI
 {
@@ -26,6 +27,7 @@ namespace ChessGameDDD.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<MakeMoveCommandHandler>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -44,7 +46,7 @@ namespace ChessGameDDD.UI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChessGameDDD.UI v1"));
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
